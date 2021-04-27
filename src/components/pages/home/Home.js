@@ -16,7 +16,7 @@ class Home extends React.Component {
       }
     
     componentDidMount() {
-        fetch(process.env.FETCHING_URL + this.state.user?.nickname)
+        fetch('http://localhost:50666/Wallets/User/' + this.state.user?.nickname)
             .then(res => res.json())
             .then(
                 (result) => {

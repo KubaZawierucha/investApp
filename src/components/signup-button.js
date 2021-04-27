@@ -10,7 +10,9 @@ const SignupButton = () => {
             onClick={() => {
                 loginWithRedirect({
                     screen_hint: 'signup'
-                })
+                }).then(
+                    console.log('USER CREATED')
+                )
             }}
         >
             Sign Up

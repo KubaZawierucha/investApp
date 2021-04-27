@@ -2,7 +2,7 @@
     --primary: #1888ff;
 }
 
-.btn {
+.btn, .btn-reverse {
     padding: 8px 20px;
     border-radius: 4px;
     outline: none;
@@ -13,7 +13,7 @@
     background-color: var(--primary);
 }
 
-.btn:hover {
+.btn:hover, .btn-reverse:hover {
     padding: 6px 18px;
     transition: all 0.3s ease-out;
     background-color: transparent;

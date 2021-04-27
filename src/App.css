@@ -5,6 +5,10 @@
   font-family: 'PT Sans', sans-serif;
 }
 
+body {
+  background-color: rgb(255, 246, 230)
+}
+
 .sign-up, .services, .products, .marketing, .home, .contact-us, .consulting {
   display: flex;
   height: 90vh;

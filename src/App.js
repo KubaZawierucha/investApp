@@ -17,7 +17,7 @@ import Consulting from './components/pages/Consulting';
 import { useAuth0 } from '@auth0/auth0-react';
 import Profile from "./profile";
 import ProtectedRoute from './auth/protected-route';
-import LoginPage from './components/pages/LoginPage';
+import LoginPage from './components/pages/loginPage/LoginPage';
 
 function App() {
   const { isLoading, isAuthenticated, user } = useAuth0();

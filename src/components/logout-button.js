@@ -6,7 +6,7 @@ const LogoutButton = () => {
 
     return (
         <button
-            className='btn btn-danger btn-block'
+            className='btn-reverse btn-danger btn-block'
             onClick={() => {
                 sessionStorage.removeItem('loggedUser');
                 logout({
