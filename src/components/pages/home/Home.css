@@ -1,0 +1,39 @@
+.mainContainer {
+    /* background: red; */
+    margin: 10px 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+}
+
+.gridItem {
+    margin: 0 15px;
+    padding: 10px;
+    /* border: 2px solid black; */
+    font-size: 1.4rem;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+Button.smallButton {
+    background: blueviolet;
+    margin: 0 10px;
+    padding: 2px;
+}
+
+.mainMainContianer {
+    width: 90%;
+    margin: auto;
+    /* background: blue; */
+    text-align: center;
+}
+
+MenuItem {
+    color: grey;
+    font-size: 1rem;
+}
