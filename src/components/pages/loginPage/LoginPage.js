@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core';
 import React from 'react';
-import LoginButton from '../../login-button';
-import SignupButton from '../../signup-button';
+import LoginButton from '../../../auth/login-button';
+import SignupButton from '../../../auth/signup-button';
 import './LoginPage.css';
 
 class LoginPage extends React.Component {

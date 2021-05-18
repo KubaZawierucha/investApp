@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(255, 246, 230)
+  background-color: #fff6e6
 }
 
 .sign-up, .services, .products, .marketing, .home, .contact-us, .consulting {
@@ -18,7 +18,6 @@ body {
 }
 
 .home {
-  background-image: url('./images/img-1.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,8 +25,7 @@ body {
   font-size: 100px;
 }
 
-.services {
-  background-image: url('./images/img-2.jpg');
+.loadingComponent {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -36,7 +34,6 @@ body {
 }
 
 .products {
-  background-image: url('./images/img-3.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -45,7 +42,6 @@ body {
 }
 
 .contact-us {
-  background-image: url('./images/img-4.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -54,7 +50,6 @@ body {
 }
 
 .sign-up {
-  background-image: url('./images/img-5.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -63,7 +58,6 @@ body {
 }
 
 .marketing {
-  background-image: url('./images/img-6.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -72,7 +66,6 @@ body {
 }
 
 .consulting {
-  background-image: url('./images/img-7.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

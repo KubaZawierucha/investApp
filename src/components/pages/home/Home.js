@@ -2,7 +2,6 @@ import React from 'react';
 import { Grid, Divider, FormControl, Select, MenuItem  } from "@material-ui/core";
 import './Home.css';
 import WalletRow from './WalletRow';
-import { useAuth0 } from '@auth0/auth0-react';
 
 class Home extends React.Component {
     constructor(props) {
@@ -41,6 +40,12 @@ class Home extends React.Component {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
             return <div>Loading...</div>;
+        } else if (wallets.length === 0) {
+            return (
+                <div className='mainContainer'>
+                    <h1 style={{backgroundColor: '#fff6e6'}}>You do not have any savings!</h1>
+                </div>
+            )
         } else {
             const walletRowComponents = wallets.map(wallet => {
                 return(
@@ -56,7 +61,7 @@ class Home extends React.Component {
                                 <Select defaultValue={0}>
                                     <MenuItem className='menuItemHeader' value={0}>favourite only</MenuItem>
                                 </Select>
-                        </FormControl>
+                            </FormControl>
                         </Grid>
                         <Grid item xs={ 2 }>
                             <FormControl>

@@ -9,10 +9,8 @@ const SignupButton = () => {
             className='btn btn-primary btn-block'
             onClick={() => {
                 loginWithRedirect({
-                    screen_hint: 'signup'
-                }).then(
-                    console.log('USER CREATED')
-                )
+                    screen_hint: 'signup',
+                })
             }}
         >
             Sign Up

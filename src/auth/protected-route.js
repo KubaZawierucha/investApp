@@ -3,13 +3,13 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
-import Services from "../components/pages/Services";
+import LoadingComponent from "../components/pages/LoadingComponent";
 
 const ProtectedRoute = ({ component, ...args }) => {
     return (
         <Route
             component={withAuthenticationRequired(component, {
-            onRedirecting: () => <Services />,
+            onRedirecting: () => <LoadingComponent />,
             })}
             {...args}
         />

@@ -39,18 +39,19 @@ function Navbar() {
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>
                         <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                            Currencies
+                            Dashboard
                         </Link>
                     </li>
                     <li className='nav-item' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-                        <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
-                            Profile <i className='fas fa-caret-down' />
+                        <Link to='/my-profile' className='nav-links' onClick={closeMobileMenu}>
+                            Profile
+                            {/* Profile <i className='fas fa-caret-down' /> */}
                         </Link>
-                        {dropdown && <Dropdown />}
+                        {/* {dropdown && <Dropdown />} */}
                     </li>
                     <li className='nav-item'>
-                        <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
-                            Notify me
+                        <Link to='/transactions' className='nav-links' onClick={closeMobileMenu}>
+                            Transactions
                         </Link>
                     </li>
                 </ul>

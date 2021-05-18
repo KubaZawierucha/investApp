@@ -1,14 +1,16 @@
 import React from "react";
 
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import Services from "./components/pages/Services";
 
 const Profile = () => {
   const { user } = useAuth0();
 //   const { name, picture, email } = user;
 
+  console.log(user);
+
   return (
     <div>
+      <h1>{user?.id}</h1>
       <div className="row align-items-center profile-header">
         <div className="col-md-2 mb-3">
           <img
