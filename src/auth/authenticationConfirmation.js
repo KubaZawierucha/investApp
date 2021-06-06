@@ -3,7 +3,7 @@ import React from 'react';
 import { Redirect } from 'react-router';
 
 const createUserInTheDB = (user) => {
-    fetch('http://localhost:50666/Users/Create/', {
+    fetch('http://localhost:5000/Users/Create/', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -25,7 +25,7 @@ function AuthenticationConfirmation() {
         const userFromSession = sessionStorage.getItem('loggedUser');
 
         if (!userFromSession) {
-            fetch('http://localhost:50666/Users/Details/' + user?.nickname)
+            fetch('http://localhost:5000/Users/Details/' + user?.nickname)
             .then(res => {
                 if (res.ok) {
                     return res.json()

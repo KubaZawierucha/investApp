@@ -1,7 +1,41 @@
 import GooglePayButton from '@google-pay/button-react';
 import React from 'react';
 
-function GooglePayComponent() {
+const createWalletUpdateBody = (wallet, quantity) => {
+    wallet.quantity += Number(quantity);
+    return wallet;
+  }
+
+const updateWallet = (newWalletBody) => {
+    fetch("http://localhost:5000/Wallets/Edit", {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify(newWalletBody),
+    })
+      .then(console.log("wallet updated"))
+  }
+
+const prepareWallet = (quantity) => {
+    const userName = JSON.parse(sessionStorage.getItem("loggedUser"))?.nickname;
+    fetch("http://localhost:5000/Wallets/User/" + userName)
+      .then((res) => res.json())
+      .then((walletsFromFetch) => {
+        return walletsFromFetch.find(
+            (wallet) => wallet.name === 'Polish Zloty'
+          );
+      })
+      .then((wallet) => {
+          return createWalletUpdateBody(wallet, quantity)
+      })
+      .then((wallet) => updateWallet(wallet))
+      .then(() => window.location.reload());
+}
+
+function GooglePayComponent(props) {
     return(
         <>
             <GooglePayButton
@@ -27,12 +61,12 @@ function GooglePayComponent() {
                     ],
                     merchantInfo: {
                         merchantId: '12345678901234567890',
-                        merchantName: 'Test Marchent',
+                        merchantName: 'Investing App',
                     },
                     transactionInfo: {
                         totalPriceStatus: 'FINAL',
                         totalPriceLabel: 'Total',
-                        totalPrice: '1',
+                        totalPrice: props.amount || '1',
                         currencyCode: 'PLN',
                         countryCode: 'PL',
                     },
@@ -41,6 +75,7 @@ function GooglePayComponent() {
                 }}
                 onLoadPaymentData = {paymentRequest => {
                     console.log('Success', paymentRequest);
+                    prepareWallet(props.amount * 10);
                 }}
                 onPaymentAuthorized = {paymentData => {
                     console.log('Payment Authorised Success', paymentData);

@@ -1,12 +1,13 @@
 .mainContainer {
     /* background: red; */
-    margin: 10px 25px;
+    margin: 20px 15px;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    
+    /* box-sizing: border-box; */
+    width: 75%;
+    text-align: center;
 }
 
 .gridItem {
@@ -24,13 +25,6 @@ Button.smallButton {
     background: blueviolet;
     margin: 0 10px;
     padding: 2px;
-}
-
-.mainMainContianer {
-    width: 90%;
-    margin: auto;
-    /* background: blue; */
-    text-align: center;
 }
 
 MenuItem {

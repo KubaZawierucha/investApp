@@ -1,31 +1,24 @@
 import React from 'react';
-import { Grid, Button, Divider  } from "@material-ui/core";
+import { Grid, Button, Divider, Paper, Link  } from "@material-ui/core";
 
 export default function WalletRow(props) {
-    const handleBuyOnClick = () => window.alert('You bought ' + props.wallet.name + '!');
-    const handleSellOnClick = () => window.alert('You sold ' + props.wallet.name + '!');
-    
     return (
-        <>
-            <div className='mainContainer'>
-                <Grid item xs={ 2 }>
+        <Grid>
+            <Paper className='mainContainer' style={{margin: "20px auto"}}>
+                <Grid item xs={ 4 }>
                     <p className='gridItem'>{props.wallet.name}</p>
-                </Grid>
-                <Grid item xs={ 2 }>
+                </Grid> 
+                <Grid item xs={ 4 }>
                     <p className='gridItem'>{props.wallet.quantity} {props.wallet.symbol}</p>
                 </Grid>
-                <Grid item xs={ 2 }>
-                    <p className='gridItem'>111.20</p>
+                <Grid item xs={ 4 }>
+                    <Link href="/transactions" style={{textDecoration: 'none', color: "inherit"}}>
+                        <Button className='smallButton' style={{padding: '10px 45px'}}>
+                            Buy
+                        </Button>
+                    </Link>
                 </Grid>
-                <Grid item xs={ 2 }>
-                    <p className='gridItem'>+0.87%</p>
-                </Grid>
-                <Grid item xs={ 2 }>
-                    <Button className='smallButton' onClick={handleBuyOnClick}>Buy</Button>
-                    <Button className='smallButton' onClick={handleSellOnClick}>Sell</Button>
-                </Grid>
-            </div>
-            <Divider />
-        </>
+            </Paper>
+        </Grid>
     );
 }
